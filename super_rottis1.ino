@@ -14,18 +14,21 @@ void setup()
 
 void loop()
 {
-  if (digitalRead(5) == 1) {
+  if (digitalRead(5) == 1) //on off logic 
+  {
     digitalWrite(13, HIGH);
   } else {
     digitalWrite(13, LOW);
   }
-  while (digitalRead(4) == 1) {
+  while (digitalRead(4) == 1) // blink 
+  {
     digitalWrite(12, HIGH);
     delay(300); // Wait for 300 millisecond(s)
     digitalWrite(12, LOW);
     delay(300); // Wait for 300 millisecond(s)
   }
-  if (digitalRead(3) == 1) {
+  if (digitalRead(3) == 1) //toggle
+  {
     if (btnstate == 1) {
       digitalWrite(11, LOW);
       btnstate = 0;
