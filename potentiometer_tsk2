@@ -1,0 +1,18 @@
+// C++ code
+//
+int read = 0;//read
+int bright = 0;
+
+void setup()
+{
+  pinMode(9, OUTPUT);
+}
+
+void loop()
+{
+  read = analogRead(A0);
+  bright=map(read,0,1023,0,255);
+  analogWrite(9, bright);
+  delay(10); // Delay a little bit to improve simulation performanc
+}
+
