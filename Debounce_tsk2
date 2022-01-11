@@ -1,0 +1,26 @@
+int btnstate = 0;
+
+void setup() {
+  
+  pinMode(2, INPUT);
+  pinMode(12, OUTPUT);
+  
+  
+}
+
+void loop() {
+  
+   if (digitalRead(2) == 1) //toggle
+  {
+    if (btnstate == 1) {
+      digitalWrite(11, LOW);
+      btnstate = 0;
+      delay(100); // Wait for 600 millisecond(s)
+    } else {
+      btnstate = 1;
+      digitalWrite(11, HIGH);
+      delay(100); // Wait for 600 millisecond(s)
+    }
+}
+
+}
