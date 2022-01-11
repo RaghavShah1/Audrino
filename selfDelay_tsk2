@@ -1,0 +1,31 @@
+// C++ code
+//
+
+unsigned long lastTime = millis();
+unsigned long delayTime = 250;
+byte ledState = LOW;
+
+
+void setup() {
+  pinMode(9, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  unsigned long timeNow = millis();
+  if (timeNow - lastTime > delayTime)
+  {
+    if (ledState == LOW)
+    {
+      ledState = HIGH;
+    }
+    else
+    {
+      ledState = LOW;
+    }
+    digitalWrite(9, ledState);
+    lastTime = timeNow;
+    //Serial.println(timeNow);
+  }
+  //Serial.println(timeNow);
+}
